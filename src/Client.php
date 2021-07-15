@@ -34,7 +34,7 @@ class Client
 
         $params['cx_signature'] = ToolsHelper::buildSignature($params, $this->secret);
 
-        [$response] = guzHttpRequest(self::HOST . $uri, $params, 'POST');
+        [$response] = ToolsHelper::guzHttpRequest(self::HOST . $uri, $params, 'POST');
 
         if ($response['code'] != 0) {
             throw new \Exception($response['message']);
