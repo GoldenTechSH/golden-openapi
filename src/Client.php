@@ -31,7 +31,7 @@ class Client
         return $this->request($uri, $params);
     }
 
-    protected function request(string $uri, array $params)
+    protected function request(string $uri, array $params = [])
     {
         $params += [
             'cx_app_key'   => $this->appKey,
