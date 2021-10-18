@@ -17,6 +17,13 @@ class Client
         $this->secret = $secret;
     }
 
+    public function conditions(int $apiId)
+    {
+        $uri = '/api/open-api/' . $apiId . '/conditions';
+
+        return $this->request($uri);
+    }
+    
     public function query(int $apiId, array $params = [])
     {
         $uri = '/api/open-api/' . $apiId;
